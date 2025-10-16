@@ -6,7 +6,6 @@
 	<artifactId>A13-basic-selenium</artifactId>
 	<version>0.0.1</version>
 
-
 	<dependencies>
 		<!--
 		https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->

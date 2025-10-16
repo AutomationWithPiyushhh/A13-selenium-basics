@@ -24,15 +24,18 @@ public class FirstLine {
 //						driver = new FirefoxDriver();
 
 //		upcast till webdriver (more load of RemoteWebDriver class).
-		WebDriver driver = new ChromeDriver();
-				  driver = new EdgeDriver();
-				  driver = new FirefoxDriver();
+//		WebDriver driver = new ChromeDriver();
+//				  driver = new EdgeDriver();
+//				  driver = new FirefoxDriver();
 
 //		ChromeDriver 	driver1 = new ChromeDriver();
 //			type	  	   ref  keyword  constructor
 //										1. launch the empty chrome browser
 //										2. Start the server
-//										3. load, register, re-initialize the non static members 
+//										3. load, register, re-initialize the non static members
+				  
+		System.setProperty("webdriver.edge.driver", "./resources/msedgedriver.exe");
+		WebDriver driver = new EdgeDriver();
 	}
 
 }
