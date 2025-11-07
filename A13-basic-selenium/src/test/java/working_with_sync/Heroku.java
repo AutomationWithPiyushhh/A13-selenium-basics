@@ -1,12 +1,15 @@
 package working_with_sync;
 
 import java.time.Duration;
+import java.util.NoSuchElementException;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 public class Heroku {
@@ -31,7 +34,15 @@ public class Heroku {
 		WebElement textBox = driver.findElement(By.cssSelector("input[type='text']"));
 //		textBox.sendKeys("abcd"); ElementNotInteractableException
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
+		
+		FluentWait wait = new FluentWait(driver);
+		wait.withTimeout(Duration.ofSeconds(15));
+		wait.pollingEvery(Duration.ofMillis(3000));
+		
+		wait.ignoring(NoSuchElementException.class);
+		wait.ignoring(ElementNotInteractableException.class);
+		
 		wait.until(ExpectedConditions.elementToBeClickable(textBox));
 		
 		textBox.sendKeys("abcd");
