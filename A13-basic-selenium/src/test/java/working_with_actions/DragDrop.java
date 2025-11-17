@@ -26,16 +26,15 @@ public class DragDrop {
 		WebElement trash = driver.findElement(By.id("trash"));
 
 		Actions act = new Actions(driver);
-		act.dragAndDrop(t1, trash).build().perform();
+		act.dragAndDropBy(t1, 450, 0).build().perform();
 		Thread.sleep(2000);
-		act.dragAndDrop(t2, trash).build().perform();
+		act.dragAndDropBy(t2, 450, 0).build().perform();
 		Thread.sleep(2000);
-		act.dragAndDrop(t3, trash).build().perform();
+		act.dragAndDropBy(t3, 450, 0).build().perform();
 		Thread.sleep(2000);
-		act.dragAndDrop(t4, trash).build().perform();
+		act.dragAndDropBy(t4, 500, 0).build().perform();
 
 		Thread.sleep(2000);
 		driver.quit();
-
 	}
 }

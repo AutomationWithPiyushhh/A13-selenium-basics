@@ -3,6 +3,7 @@ package working_with_actions;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,12 +17,35 @@ public class Facebook {
 
 		driver.get("https://www.facebook.com/");
 
-		WebElement forgotPwd = driver.findElement(By.partialLinkText("Forgotten"));
+//		WebElement forgotPwd = driver.findElement(By.partialLinkText("Forgotten"));
 
+		WebElement pwd = driver.findElement(By.id("pass")); 
 //		Thread.sleep(1000);
 
 		Actions act = new Actions(driver);
-		act.doubleClick().build().perform();
+//		act.doubleClick().build().perform();
+		
+//		shortcut me dono value pass krvana
+//		act.sendKeys("admin" + Keys.TAB + "123456789" + Keys.ENTER).build().perform();
+		
+//		Elaboration of previous task
+//		write admin in un field
+		act.sendKeys("admin")
+		
+			.keyDown(Keys.TAB)
+			.keyUp(Keys.TAB)
+		
+			.sendKeys("12345678")
+			
+			.keyDown(Keys.ENTER)
+			.keyUp(Keys.ENTER)
+		
+			.build().perform();
+			
+			
+			
+		
+		
 //		hover on forgot pwd
 //		act.moveToElement(forgotPwd).build().perform();
 
@@ -39,14 +63,14 @@ public class Facebook {
 //		act.contextClick(forgotPwd).build().perform();
 
 		Thread.sleep(3000);
-		driver.navigate().to("https://vinothqaacademy.com/mouse-event");
+//		driver.navigate().to("https://vinothqaacademy.com/mouse-event");
+//
+//		WebElement dbl = driver.findElement(By.id("dblclick"));
+//
+//		act.doubleClick(dbl).build().perform();
 
-		WebElement dbl = driver.findElement(By.id("dblclick"));
-
-		act.doubleClick(dbl).build().perform();
-
-		Thread.sleep(3000);
-//		driver.quit();
+//		Thread.sleep(3000);
+		driver.quit();
 
 	}
 }
