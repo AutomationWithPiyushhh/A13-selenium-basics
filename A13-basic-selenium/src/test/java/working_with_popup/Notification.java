@@ -10,10 +10,12 @@ public class Notification {
 	public static void main(String[] args) throws InterruptedException {
 
 		ChromeOptions setting = new ChromeOptions();
-		setting.addArguments("--disable-notifications");
-
+//		setting.addArguments("--disable-notifications");
+//		setting.addArguments("--start-maximized");
+		setting.addArguments("--incognito");
+		
 		WebDriver driver = new ChromeDriver(setting);
-		driver.manage().window().maximize();
+//		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
 
 		driver.get("https://www.easemytrip.com/");
